@@ -101,11 +101,11 @@ section{position:relative;scroll-margin-top:84px}
 .icon-moon{opacity:1;transform:rotate(0) scale(1)}
 html.dark .icon-sun{opacity:1;transform:rotate(0) scale(1)}
 html.dark .icon-moon{opacity:0;transform:rotate(90deg) scale(.5)}
-.nav-cta{font-size:var(--fs-sm);font-weight:500;color:var(--on-accent);background:var(--accent);text-decoration:none;padding:10px 18px;border-radius:var(--r-pill);box-shadow:0 6px 18px -8px var(--accent-glow);transition:transform var(--d-2) var(--e-out),box-shadow var(--d-3)}
+.nav-cta{font-size:var(--fs-sm);font-weight:500;white-space:nowrap;color:var(--on-accent);background:var(--accent);text-decoration:none;padding:10px 18px;border-radius:var(--r-pill);box-shadow:0 6px 18px -8px var(--accent-glow);transition:transform var(--d-2) var(--e-out),box-shadow var(--d-3)}
 .nav-cta:hover,.nav-cta:focus-visible{transform:translateY(-2px);box-shadow:0 12px 28px -8px var(--accent-glow)}
 
 /* ===== buttons ===== */
-.btn{font-size:var(--fs-sm);font-weight:500;padding:13px 24px;border-radius:var(--r-pill);text-decoration:none;display:inline-flex;align-items:center;gap:9px;cursor:pointer;border:1px solid transparent;position:relative;overflow:hidden;transition:transform var(--d-2) var(--e-out),box-shadow var(--d-3) var(--e-out),border-color var(--d-2),background var(--d-2),color var(--d-2)}
+.btn{font-size:var(--fs-sm);font-weight:500;white-space:nowrap;padding:13px 24px;border-radius:var(--r-pill);text-decoration:none;display:inline-flex;align-items:center;gap:9px;cursor:pointer;border:1px solid transparent;position:relative;overflow:hidden;transition:transform var(--d-2) var(--e-out),box-shadow var(--d-3) var(--e-out),border-color var(--d-2),background var(--d-2),color var(--d-2)}
 .btn svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:transform var(--d-2) var(--e-out)}
 .btn-primary{background:var(--accent);color:var(--on-accent);box-shadow:0 8px 22px -10px var(--accent-glow)}
 .btn-primary::after{content:"";position:absolute;top:0;left:0;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.35),transparent);transform:translateX(-180%) skewX(-16deg)}
@@ -306,6 +306,13 @@ html.js .stagger.in > *:nth-child(6){animation-delay:.34s}
   .metric:first-child{border-top:none}
   .edu-row{grid-template-columns:1fr}
   .edu-row .ed-when{margin-top:8px}
+}
+@media(max-width:480px){
+  /* keep just the PK mark in the bar so the CTA never gets squeezed/wrapped */
+  .brand{font-size:0;gap:0}
+  .brand .mk{font-size:12px}
+  .nav-right{gap:var(--s2)}
+  .nav-cta{padding:9px 16px}
 }
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
